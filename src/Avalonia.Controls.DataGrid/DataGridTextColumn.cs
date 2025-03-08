@@ -14,6 +14,7 @@ using Avalonia.Layout;
 using Avalonia.Markup.Xaml.MarkupExtensions;
 using Avalonia.Controls.Documents;
 using Avalonia.Styling;
+using Avalonia.Collections;
 
 namespace Avalonia.Controls
 {
@@ -202,7 +203,7 @@ namespace Avalonia.Controls
 
             SyncProperties(textBlockElement);
 
-            if (Binding != null)
+            if (Binding != null && dataItem != DataGridCollectionView.NewItemPlaceholder)
             {
                 textBlockElement.Bind(TextBlock.TextProperty, Binding);
             }
